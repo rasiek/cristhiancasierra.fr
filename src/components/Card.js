@@ -2,15 +2,15 @@ import * as React from 'react'
 import { TextContent, Wrapper } from './Card.style'
 
 
-const Card = () => {
+const Card = ({ src, title, description }) => {
 
     return (
         <Wrapper>
-            <img src="https://picsum.photos/800/600" alt="placeholder" />
+            <img src={src} alt={title} />
 
             <TextContent>
-                <h4>Lorem ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                <h4>{title}</h4>
+                <p>{description}</p>
             </TextContent>
         </Wrapper>
     )

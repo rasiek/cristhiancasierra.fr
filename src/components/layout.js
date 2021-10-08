@@ -8,7 +8,7 @@ import Favicon from '../images/favicon.ico'
 import { createGlobalStyle } from 'styled-components'
 import { theme } from './Theme'
 import { ThemeProvider } from '@material-ui/styles'
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, TextField } from '@material-ui/core'
+import { Button, IconButton, Modal, TextField, Box, FormControl, InputLabel, Input } from '@material-ui/core'
 import { Email } from '@material-ui/icons'
 
 
@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, children, isOpen }) => {
 
     const data = useStaticQuery(graphql`
         query {
@@ -59,16 +59,24 @@ const Layout = ({ pageTitle, children }) => {
         }
     `)
 
-    const [open, setOpen] = React.useState(false)
+    const [openModal, setOpenModal] = React.useState(false)
+
+
 
     const handleClickOpen = () => {
-        setOpen(true)
+        setOpenModal(true)
     }
 
-    const handleSubmit = () => {
-        setOpen(false)
-    }
+    const handleSubmit = (evt) => {
 
+        evt.preventDefault()
+        setOpenModal(false)
+    }
+    const handleClose = () => {
+
+        console.log("inside habdleClose")
+        setOpenModal(false)
+    }
 
 
     return (
@@ -81,54 +89,90 @@ const Layout = ({ pageTitle, children }) => {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Patua+One&?family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet"></link>
             </Helmet>
 
-            <Dialog open={open}
-                onClick={handleClickOpen}>
+            <Modal
+                open={openModal}
+                onClose={handleClose}>
 
-                <DialogTitle>Formulaire de Contact</DialogTitle>
+                <Box
+                    component="form"
+                    onSubmit={handleSubmit}
+                    id="contact-form"
+                    method="POST"
+                    sx={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
+                        gridTemplateRows: "repeat(5,1fr)",
+                        background: "#eee",
+                        width: "500px",
+                        margin: '20px auto',
+                        height: "60vh",
+                        borderRadius: "10px"
+                    }}>
 
-                <DialogContent d>
-                    <TextField
-                        margin="dense"
-                        id="name"
-                        label="Nom"
-                        type="text"
-                        variant="standard"
-                        required />
 
-                    <TextField
-                        margin="dense"
-                        id="email"
-                        label="Adresse email"
-                        type="email"
-                        variant="standard"
-                        required
-                        style={{ marginLeft: 20 }}
-                    />
-                    <TextField
-                        margin="dense"
-                        id="objet"
-                        label="Sujet"
-                        type="text"
-                        fullWidth
-                        variant="standard" />
+                    <h1 style={{
+                        gridColumn: 'span 2',
+                        margin: '0 20px'
+                    }}>
+                        Formulaire de Contact</h1>
 
-                    <TextField
-                        margin="dense"
-                        aria-label="message"
-                        multiline
-                        label="Message"
-                        id="message"
-                        minRows="5"
-                        placeholder="Écrire votre message ici..."
-                        fullWidth
-                        required
-                    />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleSubmit}>Envoyer</Button>
-                </DialogActions>
+                    <FormControl style={{
+                        margin: '0 20px'
+                    }}>
+                        <InputLabel htmlFor="lastname">Nom</InputLabel>
+                        <Input id="lastname" aria-describedby="nom" required />
+                    </FormControl>
 
-            </Dialog>
+                    <FormControl style={{
+                        margin: '0 20px'
+                    }}>
+                        <InputLabel htmlFor="firstname">Prénom</InputLabel>
+                        <Input id="firstname" aria-describedby="prenom" required />
+                    </FormControl>
+
+                    <FormControl style={{
+                        gridColumn: 'span 2',
+                        margin: '0 20px'
+                    }}>
+                        <InputLabel htmlFor="email">Email</InputLabel>
+                        <Input id="email" aria-describedby="email" required />
+                    </FormControl>
+
+                    <FormControl style={{
+                        gridColumn: 'span 2',
+                        margin: '0 20px'
+                    }}>
+                        <InputLabel htmlFor="object">Sujet</InputLabel>
+                        <Input id="object" aria-describedby="object" />
+                    </FormControl>
+
+                    <FormControl style={{
+                        gridColumn: 'span 2',
+                        margin: '0 20px'
+                    }}>
+                        <TextField
+                            margin="dense"
+                            aria-label="message"
+                            multiline
+                            label="Message"
+                            id="message"
+                            minRows="5"
+                            placeholder="Écrire votre message ici..."
+                            fullWidth
+                            required
+                        />
+                    </FormControl>
+                    <Button
+                        type="submit"
+                        style={{
+                            gridColumn: 'span 2',
+                            margin: 'auto'
+                        }}>
+                        Envoyer
+                    </Button>
+                </Box>
+
+            </Modal>
 
             <ThemeProvider theme={theme} >
                 <React.Fragment>

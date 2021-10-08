@@ -4,10 +4,24 @@ import Layout from "../../components/layout"
 const Blog = () => {
     return (
         <Layout pageTitle="Blog">
-            <h1>Blog Post</h1>
-            <p>Post 1</p>
-            <p>Post 2</p>
-            <p>Post 3</p>
+            <div style={{
+                background: "repeating-linear-gradient( -55deg, #393e46 , #393e46  20px, #ffff9a  20px, #ffff9a  40px)",
+                width: "80vw",
+                height: "30vh",
+                margin: "20vh auto",
+                borderRadius: 5,
+                display: 'flex',
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+                <h1 style={{
+                    background: "#393e46",
+                    color: "#eee",
+                    border: "solid 10px #393e46",
+                    borderRadius: "10px",
+
+                }}>Page en construction</h1>
+            </div>
         </Layout>
     )
 }

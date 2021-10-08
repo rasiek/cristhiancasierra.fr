@@ -31,16 +31,25 @@ export const Content = styled.div`
         }
     }
 
-    .typewriter {
+    .Typewriter {
+        margin-top: 10px;
+    }
+
+    .Typewriter__wrapper {
         font-family: 'Josefin Sans', sans-serif;
         font-weight: normal;
         font-size: 1.5rem;
-        margin-top: 25px;
 
         @media screen and (max-width: 600px) {
             font-size: 1.2rem;
         }
 
+    }
+
+    .Typewriter__cursor {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: normal;
+        font-size: 1.6rem;
     }
 
     button {

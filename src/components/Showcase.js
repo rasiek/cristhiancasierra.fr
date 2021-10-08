@@ -11,9 +11,21 @@ const Showcase = () => {
             <h2 className="description">Je suis Cristhian Casierra, un designer doté d’une curiosité extreme et  passioné par la technologie et le <span>developpement.</span></h2>
             <h2 className="title">Projets</h2>
             <Grid>
-                <Card />
-                <Card />
-                <Card />
+                <Card
+                    src="https://picsum.photos/800/600"
+                    title="Lorem ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam"
+                />
+                <Card
+                    src="https://picsum.photos/800/600"
+                    title="Lorem ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam"
+                />
+                <Card
+                    src="https://picsum.photos/800/600"
+                    title="Lorem ipsum"
+                    description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam"
+                />
             </Grid>
             <Link to="/projets">Tous les projets <span><ArrowRightAlt /></span></Link>
         </Wrapper>

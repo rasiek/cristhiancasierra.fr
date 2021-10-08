@@ -8,7 +8,8 @@ export const Wrapper = styled.div`
     img {
         width: 90%;
         max-width: 450px;
-        height: auto;
+        height: 250px;
+        object-fit: cover;
     }
 
     h4 {
