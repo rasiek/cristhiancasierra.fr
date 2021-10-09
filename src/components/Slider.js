@@ -75,7 +75,6 @@ const Slider = ({ slides, show, infiniteLoop }) => {
         }
         return output
     }
-    console.log(`currentIndex ${currentIndex}\n${isRepeating}`)
 
 
     return (

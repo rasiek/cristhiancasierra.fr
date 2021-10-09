@@ -113,7 +113,6 @@ const Project = ({ data }) => {
         title: photo.title
     }))
 
-    console.log(slides.length)
     return (
         <Layout pageTitle={data.contentfulProject.title}>
 
