@@ -95,7 +95,9 @@ const Layout = ({ pageTitle, children, isOpen }) => {
 
                 <Box
                     component="form"
+                    name="contact"
                     data-netlify="true"
+                    data-netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
                     id="contact-form"
                     method="POST"
@@ -110,7 +112,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         borderRadius: "10px"
                     }}>
 
-
+                    <input type="hidden" name="form-name" value="contact" />
                     <h1 style={{
                         gridColumn: 'span 2',
                         margin: '0 20px'
@@ -165,6 +167,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                     </FormControl>
                     <Button
                         type="submit"
+
                         style={{
                             gridColumn: 'span 2',
                             margin: 'auto'
