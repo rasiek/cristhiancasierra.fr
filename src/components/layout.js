@@ -95,6 +95,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
 
                 <Box
                     component="form"
+                    data-netlify="true"
                     onSubmit={handleSubmit}
                     id="contact-form"
                     method="POST"

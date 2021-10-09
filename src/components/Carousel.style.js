@@ -53,6 +53,7 @@ export const Card = styled.div`
         max-width: 450px;
         height: 50vh;
         border-radius: 10px;
+        object-fit: contain;
 
         @media screen and (max-width: 1000px) {
             height: 30vh;
