@@ -192,6 +192,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         <Navbar modalOpen={handleClickOpen} />
                         <Body>
                             <form netlify netlify-honeypot="bot-field" name="contact" hidden>
+                                <input type="hidden" name="form-name" value="contact" />
                                 <input
                                     type="text"
                                     name="lastname"
