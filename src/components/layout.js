@@ -89,12 +89,15 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Patua+One&?family=Reem+Kufi:wght@400;500;700&display=swap" rel="stylesheet"></link>
             </Helmet>
 
+
+
             <Modal
                 open={openModal}
                 onClose={handleClose}>
 
                 <Box
                     component="form"
+                    netlify
                     name="contact"
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
@@ -123,14 +126,14 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         margin: '0 20px'
                     }}>
                         <InputLabel htmlFor="lastname">Nom</InputLabel>
-                        <Input id="lastname" aria-describedby="nom" required />
+                        <Input name="lastname" id="lastname" aria-describedby="nom" required />
                     </FormControl>
 
                     <FormControl style={{
                         margin: '0 20px'
                     }}>
                         <InputLabel htmlFor="firstname">Prénom</InputLabel>
-                        <Input id="firstname" aria-describedby="prenom" required />
+                        <Input id="firstname" name="firstname" aria-describedby="prenom" required />
                     </FormControl>
 
                     <FormControl style={{
@@ -138,7 +141,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         margin: '0 20px'
                     }}>
                         <InputLabel htmlFor="email">Email</InputLabel>
-                        <Input id="email" aria-describedby="email" required />
+                        <Input id="email" type="email" name="email" aria-describedby="email" required />
                     </FormControl>
 
                     <FormControl style={{
@@ -146,7 +149,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         margin: '0 20px'
                     }}>
                         <InputLabel htmlFor="object">Sujet</InputLabel>
-                        <Input id="object" aria-describedby="object" />
+                        <Input id="object" name="object" aria-describedby="object" />
                     </FormControl>
 
                     <FormControl style={{
@@ -159,6 +162,7 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                             multiline
                             label="Message"
                             id="message"
+                            name="message"
                             minRows="5"
                             placeholder="Écrire votre message ici..."
                             fullWidth
@@ -187,6 +191,27 @@ const Layout = ({ pageTitle, children, isOpen }) => {
                         </IconButton>
                         <Navbar modalOpen={handleClickOpen} />
                         <Body>
+                            <form netlify netlify-honeypot="bot-field" name="contact" hidden>
+                                <input
+                                    type="text"
+                                    name="lastname"
+                                />
+                                <input
+                                    type="text"
+                                    name="firstname"
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                />
+                                <input
+                                    type="text"
+                                    name="object"
+                                />
+                                <textarea
+                                    name="message"
+                                ></textarea>
+                            </form>
                             {children}
                         </Body>
                         <Footer />
