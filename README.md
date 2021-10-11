@@ -7,8 +7,6 @@
   Portfolio website 
 </h1>
 
-## 🚀 Quick start
-
 *  **Description**
 
     v0.2 of my portfolio website showcasing some of my works. Site developed using Gatsby and contenful. Deployed in Netlify.
