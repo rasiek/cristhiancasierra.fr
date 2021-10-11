@@ -32,17 +32,6 @@ const Works = () => {
         )
     })
 
-    console.log(slides)
-
-    // const slides = [
-    //     { title: "Création de Produit", alt: "creation-de-produit", src: "https://unsplash.com/photos/dQf7RZhMOJU" },
-    //     { title: "Dévelopement Backend", alt: "developement-backend", src: "https://unsplash.com/photos/E-V6EMtGSUU" },
-    //     { title: "Dévelopement Web", alt: "web-developement", src: "https://unsplash.com/photos/MI9-PY5cyNs" },
-    //     { title: "Dévelopement Logiciel", alt: "placeholder", src: "https://picsum.photos/1920/1280" },
-    //     { title: "Arduino", alt: "arduino", src: "https://unsplash.com/photos/aSvBypuXGkc" },
-    //     { title: "Impression 3D", alt: "impression-3d", src: "https://unsplash.com/photos/aCniNTiIFd8" },
-    // ]
-
     return (
         <Wrapper>
             <h2>Ce que je fais</h2>
