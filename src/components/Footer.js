@@ -20,14 +20,18 @@ const Footer = () => {
                 />
 
                 <div>
-                    <h4>Reseaux Sociaux</h4>
+                    <h4>Réseaux Sociaux</h4>
                     <div>
                         <IconButton>
-                            <GitHubIcon fontSize="large" color="secondary" />
+                            <a href="https://github.com/rasiek" target="_blank" rel="noreferrer">
+                                <GitHubIcon fontSize="large" color="secondary" />
+                            </a>
                         </IconButton>
 
                         <IconButton>
-                            <LinkedInIcon fontSize="large" color="secondary" />
+                            <a href="https://www.linkedin.com/in/cristhiancasierra/" target="_blank" rel="noreferrer">
+                                <LinkedInIcon fontSize="large" color="secondary" />
+                            </a>
                         </IconButton>
 
                     </div>
